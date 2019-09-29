@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-	<script src="https://corvalan.dev/pitonico/pt/theme/skulpt.min.js" type="text/javascript"></script>
-	<script src="https://corvalan.dev/pitonico/pt/theme/skulpt-stdlib.js" type="text/javascript"></script>
+	<script src="https://corvalan.dev/pitonico/pt/../theme/skulpt.min.js" type="text/javascript"></script>
+	<script src="https://corvalan.dev/pitonico/pt/../theme/skulpt-stdlib.js" type="text/javascript"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +14,11 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/../theme/stylesheet/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/../theme/stylesheet/style.min.css">
 
   <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/../theme/pygments/github.min.css">
   <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/../theme/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/theme/stylesheet/prism.css" />
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/pt/../theme/stylesheet/prism.css" />
 
 
     <link href="https://corvalan.dev/pitonico/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pythônico Atom">
@@ -90,7 +90,7 @@ function runit(entra, sale) {
    });
 } 
 </script> 
-	<script src="https://corvalan.dev/pitonico/pt/theme/prism.js"></script>
+	<script src="https://corvalan.dev/pitonico/pt/../theme/prism.js"></script>
   <aside>
     <div>
       <a href="https://corvalan.dev/pitonico/pt">
@@ -133,7 +133,7 @@ function runit(entra, sale) {
 <p>Hoje, a maioria das bibliotecas/módulos de código escritos em Python são compatíveis para ambas as versões, mas não são todas. É por isso que, para trabalhar em projetos com diferentes versões do Python, é aconselhável criar ambientes virtuais (ou <em>virtual environments</em>). E eles não apenas trabalham para isso, quando possuem projetos que dependem de bibliotecas criadas por outras pessoas, um ambiente virtual permite que você saiba imediatamente com quais bibliotecas (e qual versão de cada uma delas) seu código funciona corretamente, facilitando a exportação do código, seja para produção ou para trabalhar em equipe. Agora, o Python possui seu próprio gerenciador de ambientes virtuais, mas a maneira de executar é diferente entre os sistemas operacionais.</p>
 <p><img alt="Foto" src="https://corvalan.dev/pitonico/pt/images/python_environment.png"></p>
 <p>Para evitar cair em um emaranhado como o deste desenho animado do <a href="https://xkcd.com/">xkcd</a>, apresentarei uma opção comum aos três sistemas operacionais mais populares: Windows, macOS e Linux/Ubuntu. E este é o <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.</p>
-<p>Para instalá-lo, você deve primeiro conhecer a versão do seu sistema operacional. No Windows, você pode seguir este guia (https://support.microsoft.com/es-cl/help/13443/windows-which-version-am-i-running) para obter as informações. No Linux e no macOS, é tão simples quanto escrever no terminal <code>getconf LONG_BIT</code>. A resposta será de 32 ou 64 bits.</p>
+<p>Para instalá-lo, você deve primeiro conhecer a versão do seu sistema operacional. No Windows, você pode seguir <a href="https://support.microsoft.com/es-cl/help/13443/windows-which-version-am-i-running">este guia</a> para obter as informações. No Linux e no macOS, é tão simples quanto escrever no terminal <code>getconf LONG_BIT</code>. A resposta será de 32 ou 64 bits.</p>
 <p>Com essas informações em mãos, baixamos a versão correta do instalador do Miniconda. E com isso teremos conosco, o gerenciador do <em>virtual environment</em> conda, o gerenciador de pacotes (<em>package manager</em>) pip e as duas versões do Python (3.7 sendo o padrão).</p>
 <p>Também precisaremos de um editor de texto. Há uma grande variedade deles e você pode escolher o que mais lhe convier. No entanto, eu recomendo que você instale o <a href="https://www.sublimetext.com/3">Sublime Text 3</a> por ser extremamente amigável. <strike> Embora eu realmente use apenas <a href="https://www.vim.org">vim</a>.</strike></p>
 <p>Agora, com tudo isso, já temos um ambiente adequado para podermos programar.</p>
