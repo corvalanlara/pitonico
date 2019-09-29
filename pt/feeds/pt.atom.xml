@@ -11,9 +11,9 @@
 &lt;p&gt;Agora, com tudo isso, já temos um ambiente adequado para podermos programar.&lt;/p&gt;
 &lt;p&gt;Para testá-lo, abra o terminal (Ctrl + T, no Linux e macOS) ou, se você usa o Windows, o Command Prompt (e não o PowerShell) que apareceu após a instalação do Miniconda no Windows (que chamarei indistintamente do terminal agora em diante). E escreva &lt;code&gt;python -V&lt;/code&gt;. Se a resposta for Python 3.7, tudo está pronto.&lt;/p&gt;
 &lt;p&gt;Agora vamos criar nosso primeiro código, um "Olá, mundo". Este pequeno programa é o objetivo de conhecer em geral a sintaxe específica de um idioma. Primeiro, criaremos nosso &lt;em&gt;virtual environment&lt;/em&gt; digitando &lt;code&gt;conda create -n intro&lt;/code&gt; onde intro é o nome do nosso ambiente.&lt;/p&gt;
-&lt;p&gt;Para ativar o ambiente, vocês devem escrever &lt;code&gt;conda activate intro&lt;/code&gt;. Aparecerá (intro) antes do seu nome de usuário no terminal. Agora abra seu editor de texto e escreva &lt;code&gt;print("Olá, mundo")&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Para ativar o ambiente, vocês devem escrever &lt;code&gt;conda activate intro&lt;/code&gt;. Aparecerá (intro) antes do seu nome de usuário no terminal. Agora abra seu editor de texto e escreva &lt;code&gt;print("Oi, mundo")&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="line-numbers" id="uno"&gt;
-&lt;button class="fa fa-play play-button" onclick="runit('uno','dos')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""&gt;&lt;/button&gt;&lt;code class="language-python"&gt;print("Olá, mundo")
+&lt;button class="fa fa-play play-button" onclick="runit('uno','dos')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""&gt;&lt;/button&gt;&lt;code class="language-python"&gt;print("Oi, mundo")
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre id="dos"&gt;&lt;/pre&gt;
