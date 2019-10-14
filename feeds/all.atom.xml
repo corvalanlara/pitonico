@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Pitónico</title><link href="https://corvalan.dev/pitonico/" rel="alternate"></link><link href="https://corvalan.dev/pitonico/feeds/all.atom.xml" rel="self"></link><id>https://corvalan.dev/pitonico/</id><updated>2019-09-26T12:37:00-03:00</updated><subtitle>por Daniel Corvalán</subtitle><entry><title>Instalando Python</title><link href="https://corvalan.dev/pitonico/instalando.html" rel="alternate"></link><published>2019-09-26T12:37:00-03:00</published><updated>2019-09-26T12:37:00-03:00</updated><author><name>Daniel Corvalán</name></author><id>tag:corvalan.dev,2019-09-26:/pitonico/instalando.html</id><summary type="html">&lt;p&gt;Para programar requeriremos dos cosas: un editor de texto y el interpretador de Python.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Pitónico</title><link href="https://corvalan.dev/pitonico/" rel="alternate"></link><link href="https://corvalan.dev/pitonico/feeds/all.atom.xml" rel="self"></link><id>https://corvalan.dev/pitonico/</id><updated>2019-09-26T12:37:00-03:00</updated><subtitle>por Daniel Corvalán</subtitle><entry><title>Tipos de datos I</title><link href="https://corvalan.dev/pitonico/data-types.html" rel="alternate"></link><published>2019-09-26T12:37:00-03:00</published><updated>2019-09-26T12:37:00-03:00</updated><author><name>Daniel Corvalán</name></author><id>tag:corvalan.dev,2019-09-26:/pitonico/data-types.html</id><summary type="html">&lt;p&gt;Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o &lt;em&gt;data type&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Primero, abrimos …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o &lt;em&gt;data type&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Primero, abrimos la terminal y escribirmos &lt;code&gt;conda activate intro&lt;/code&gt; y luego &lt;code&gt;python&lt;/code&gt;. En la entrada anterior usamos &lt;code&gt;python intro.py&lt;/code&gt; para ejecutar el código en el archivo intro.py, ahora estamos usando el interpretador interactivo (&lt;em&gt;interactive interpreter&lt;/em&gt;, también llamado &lt;em&gt;interactive shell&lt;/em&gt;) para ejecutar código. Normalmente se puede usar el modo interactivo para testear código o para pequeños programas que no requieren ser guardados.&lt;/p&gt;
+&lt;p&gt;El cursor ahora estará frente a &amp;gt;&amp;gt;&amp;gt;, esperando que ingresemos algo. Escribamos &lt;code&gt;primera_variable = 42&lt;/code&gt; y presionaremos Enter. Hemos creado y asignado nuestra primera variable llamada &lt;code&gt;primera_variable&lt;/code&gt;.
+&lt;pre class="line-numbers" id="tres"&gt;
+&lt;button class="fa fa-play play-button" onclick="runit('tres','cuatro')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""&gt;&lt;/button&gt;&lt;code class="language-python"&gt;primera_variable = 42
+print(primera_variable)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre id="cuatro"&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;Cada vez que escribamos &lt;code&gt;primera_variable&lt;/code&gt; Python evaluará la variable, buscará el &lt;strong&gt;último&lt;/strong&gt; tipo de dato que le fue asignado y lo reemplazará por la variable misma. Es decir, cada vez que escribamos &lt;code&gt;primera_variable&lt;/code&gt;, Python entenderá 42 (al menos hasta que modifiquemos la variable misma). Si escribimos &lt;code&gt;primera_variable&lt;/code&gt; en la shell, ésta nos devolverá el número asignado.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;primera_variable&lt;/span&gt;
+&lt;span class="mi"&gt;42&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ahora, también es posible reasignar la variable.
+&lt;pre class="line-numbers" id="cinco"&gt;
+&lt;button class="fa fa-play play-button" onclick="runit('cinco','seis')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""&gt;&lt;/button&gt;&lt;code class="language-python"&gt;primera_variable = 42
+primera_variable = 'Alstroemeria patagonica'
+print(primera_variable)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre id="seis"&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;Como el último tipo de dato asignado fue la frase "Alstroemeria patagonica", esta es la que Python imprime. Ahora, hasta el momento hemos visto dos tipos de datos: el primero un número entero y después una frase. Al primer tipo de datos, Python los denomina &lt;em&gt;integer&lt;/em&gt; (el nombre usado en inglés para remitir a números enteros). Con este tipo de datos podemos guardar información del tipo: cantidad de palabras que un texto tiene o número de personas que le dieron compartieron una publicación en X red social. El segundo tipo de datos es conocido como &lt;em&gt;String&lt;/em&gt;, una secuencia de caracteres delimitada por el uso de comillas (las que puedes ser simples '' o dobles ""). Con ellas podemos guardar información como nombres o el texto de una publicación.&lt;/p&gt;
+&lt;p&gt;Existen dos tipos de datos básicos que creo preciso mencionar aquí. Si quisiéramos guardar el valor del dolar al día, por ejemplo, usaríamos un &lt;em&gt;float&lt;/em&gt;, un número entero con una parte decimal, el cual, siguiendo la notación americana, usa punto en vez de coma: &lt;code&gt;dolar = 712.98&lt;/code&gt;. Y si necesitamos saber que algo es verdadero o falso, usamos un tipo de dato &lt;em&gt;boolean&lt;/em&gt;, creando un variable como: &lt;code&gt;la_tierra_es_plana = False&lt;/code&gt; o &lt;code&gt;las_vacunas_no_causan_autismo = True&lt;/code&gt;. Un booleano sólo tiene dos valores: True o False (así, con mayúscula).&lt;/p&gt;
+&lt;p&gt;Podemos saber qué tipo de dato estamos manejando si usamos la función type().&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;decimal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;3.14&lt;/span&gt;
+&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;decimal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;lt;class 'float'&amp;gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;palabra&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;我是很忙&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;palabra&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;lt;class 'str'&amp;gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;si&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;lt;class 'bool'&amp;gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numero&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;24&lt;/span&gt;
+&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numero&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;lt;class 'int'&amp;gt;&lt;/p&gt;
+&lt;p&gt;Como punto aparte, Python tiene una &lt;a href="" title="https://www.python.org/dev/peps/pep-0008/"&gt;guía de estilo&lt;/a&gt; que creo conveniente que tengan en cuenta. Una de estas convenciones es el uso de snake_case (i.e. escribir varibles &lt;code&gt;donde_las_palabras_se_separan_por_underscores&lt;/code&gt;), en oposición al camelCase, donde el nombre de la variable está &lt;code&gt;unidoPeroConMayusculas&lt;/code&gt;. A su vez, existe otra convención entre programadores, donde, al escribir una variable toda en mayúscula &lt;code&gt;TODA_EN_MAYÚSCULA&lt;/code&gt;, se asume que el valor que esta tiene no va a cambiar nunca (i.e. es estática).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strings&lt;/em&gt;, &lt;em&gt;integers&lt;/em&gt;, &lt;em&gt;floats&lt;/em&gt; y &lt;em&gt;booleans&lt;/em&gt; son los tipos de datos básicos con los que trabajaremos durante las próximas publicaciones. Hay más, pero a medida que los necesitemos se los presentaré.&lt;/p&gt;
+&lt;p&gt;Por último, escribimos &lt;code&gt;exit()&lt;/code&gt; en la shell, para cerrar nuestra sesión en la shell. Y luego &lt;code&gt;conda deactivate&lt;/code&gt; para salir de nuestros &lt;em&gt;environment&lt;/em&gt; de trabajo.&lt;/p&gt;</content><category term="python"></category><category term="programming"></category><category term="coding"></category></entry><entry><title>Instalando Python</title><link href="https://corvalan.dev/pitonico/instalando.html" rel="alternate"></link><published>2019-09-26T12:37:00-03:00</published><updated>2019-09-26T12:37:00-03:00</updated><author><name>Daniel Corvalán</name></author><id>tag:corvalan.dev,2019-09-26:/pitonico/instalando.html</id><summary type="html">&lt;p&gt;Para programar requeriremos dos cosas: un editor de texto y el interpretador de Python.&lt;/p&gt;
 &lt;p&gt;Python existe en dos versiones: Python 2.7 y Python 3.x (siendo la versión más reciente 3.7.4). En esta introducción a Python utilizaremos la versión 3.7, por una razón muy simple: la …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Para programar requeriremos dos cosas: un editor de texto y el interpretador de Python.&lt;/p&gt;
 &lt;p&gt;Python existe en dos versiones: Python 2.7 y Python 3.x (siendo la versión más reciente 3.7.4). En esta introducción a Python utilizaremos la versión 3.7, por una razón muy simple: la versión 2.7 perderá el soporte del equipo de desarrolladores de Python el &lt;a href="https://pythonclock.org"&gt;1 de enero del 2020&lt;/a&gt;. Esto significa que no tendrá actualizaciones de seguridad, ni corrección de los errores (bugs) que se encuentren en el lenguaje. Considerando que la versión 3 es la que se mantendrá en desarrollo, es que preferiremos esta versión sobre la otra.&lt;/p&gt;
 &lt;p&gt;Hoy, la mayoría de las librerías/modulos de código escrito en Python es compatible para ambas versiones, mas no todos. Es por esto que para poder trabajar en proyectos con distintas versiones de Python es recomendable crear ambientes virtuales (o &lt;em&gt;virtual environments&lt;/em&gt;). Y no sólo sirven para ello, cuando tengan proyectos que dependan de librerías creadas por otros, un ambiente virtual permite saber inmediatamente con qué librerías (y qué versión de cada una de éstas) tu código funciona correctamente, haciendo más fácil la exportación del código, ya sea a producción o para trabajar en equipo. Ahora bien, Python tiene un administrador de ambientes virtuales propios pero la forma de ejecutar es distinta entre sistemas operativos.&lt;/p&gt;

@@ -45,7 +45,6 @@
   <script type="text/javascript"> 
 // output functions are configurable.  This one just appends some text
 // to a pre element.
-
 function builtinRead(x) {
     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
             throw "File not found: '" + x + "'";
@@ -67,7 +66,7 @@ function runit(entra, sale) {
    var mypre = document.getElementById(sale); 
    mypre.innerHTML = ''; 
    Sk.pre = sale;
-   Sk.configure({output:outf, read:builtinRead}); 
+   Sk.configure({output:outf, read:builtinRead, __future__:Sk.python3}); 
    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
@@ -108,6 +107,8 @@ function runit(entra, sale) {
   </header>
   <div>
     <dl>
+      <dt>26 de septiembre del 2019</dt>
+      <dd><a href="https://corvalan.dev/pitonico/data-types.html">Tipos de datos I</a></dd>
       <dt>26 de septiembre del 2019</dt>
       <dd><a href="https://corvalan.dev/pitonico/instalando.html">Instalando Python</a></dd>
       <dt>21 de septiembre del 2019</dt>

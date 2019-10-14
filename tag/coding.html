@@ -45,7 +45,6 @@
   <script type="text/javascript"> 
 // output functions are configurable.  This one just appends some text
 // to a pre element.
-
 function builtinRead(x) {
     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
             throw "File not found: '" + x + "'";
@@ -67,7 +66,7 @@ function runit(entra, sale) {
    var mypre = document.getElementById(sale); 
    mypre.innerHTML = ''; 
    Sk.pre = sale;
-   Sk.configure({output:outf, read:builtinRead}); 
+   Sk.configure({output:outf, read:builtinRead, __future__:Sk.python3}); 
    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);
@@ -104,6 +103,24 @@ function runit(entra, sale) {
 
 
 
+<article>
+  <header>
+    <h2><a href="https://corvalan.dev/pitonico/data-types.html#data-types">Tipos de datos I</a></h2>
+    <p>
+      Publicado el 26 de septiembre del 2019 en <a href="https://corvalan.dev/pitonico/category/basics.html">Basics</a>
+
+          &#8226; Etiquetado con
+              <a href="https://corvalan.dev/pitonico/tag/python.html">python</a>,              <a href="https://corvalan.dev/pitonico/tag/programming.html">programming</a>,              <a href="https://corvalan.dev/pitonico/tag/coding.html">coding</a>
+    </p>
+  </header>
+  <div>
+      <p>Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o <em>data type</em>).</p>
+<p>Primero, abrimos …</p>
+      <br>
+      <a class="btn" href="https://corvalan.dev/pitonico/data-types.html#data-types">Seguir leyendo</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="https://corvalan.dev/pitonico/instalando.html#instalando">Instalando Python</a></h2>

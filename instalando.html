@@ -55,7 +55,6 @@
   <script type="text/javascript"> 
 // output functions are configurable.  This one just appends some text
 // to a pre element.
-
 function builtinRead(x) {
     if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
             throw "File not found: '" + x + "'";
@@ -77,7 +76,7 @@ function runit(entra, sale) {
    var mypre = document.getElementById(sale); 
    mypre.innerHTML = ''; 
    Sk.pre = sale;
-   Sk.configure({output:outf, read:builtinRead}); 
+   Sk.configure({output:outf, read:builtinRead, __future__:Sk.python3}); 
    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
    var myPromise = Sk.misceval.asyncToPromise(function() {
        return Sk.importMainWithBody("<stdin>", false, prog, true);

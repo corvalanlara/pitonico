@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script src="https://corvalan.dev/pitonico/theme/skulpt.min.js" type="text/javascript"></script>
+	<script src="https://corvalan.dev/pitonico/theme/skulpt-stdlib.js" type="text/javascript"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://corvalan.dev/pitonico/theme/stylesheet/prism.css" />
+
+
+    <link href="https://corvalan.dev/pitonico/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Pitónico Atom">
+
+
+    <link rel="shortcut icon" href="/theme/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/theme/img/favicon.ico" type="image/x-icon">
+
+
+
+<meta name="author" content="Daniel Corvalán" />
+<meta name="description" content="Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o data type). Primero, abrimos …" />
+<meta name="keywords" content="python, programming, coding">
+
+<meta property="og:site_name" content="Pitónico"/>
+<meta property="og:title" content="Tipos de datos I"/>
+<meta property="og:description" content="Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o data type). Primero, abrimos …"/>
+<meta property="og:locale" content="es_CL"/>
+<meta property="og:url" content="https://corvalan.dev/pitonico/data-types.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-09-26 12:37:00-03:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://corvalan.dev/pitonico/author/daniel-corvalan.html">
+<meta property="article:section" content="Basics"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="programming"/>
+<meta property="article:tag" content="coding"/>
+<meta property="og:image" content="">
+
+  <title>Pitónico &ndash; Tipos de datos I</title>
+
+</head>
+<body>
+  <script type="text/javascript"> 
+// output functions are configurable.  This one just appends some text
+// to a pre element.
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+// Here's everything you need to run a python program in skulpt
+// grab the code from your textarea
+// get a reference to your pre element for output
+// configure the output function
+// call Sk.importMainWithBody()
+
+
+function runit(entra, sale) {
+	function outf(text) { 
+    var mypre = document.getElementById(sale); 
+    mypre.innerHTML = mypre.innerHTML + text; 
+    } 
+   var prog = document.getElementById(entra).innerText; 
+   var mypre = document.getElementById(sale); 
+   mypre.innerHTML = ''; 
+   Sk.pre = sale;
+   Sk.configure({output:outf, read:builtinRead, __future__:Sk.python3}); 
+   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+   var myPromise = Sk.misceval.asyncToPromise(function() {
+       return Sk.importMainWithBody("<stdin>", false, prog, true);
+   });
+   myPromise.then(function(mod) {
+       console.log('success');
+   },
+       function(err) {
+       console.log(err.toString());
+   });
+} 
+</script> 
+	<script src="https://corvalan.dev/pitonico/theme/prism.js"></script>
+  <aside>
+    <div>
+      <a href="https://corvalan.dev/pitonico">
+        <img src="https://corvalan.dev/pitonico/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://corvalan.dev/pitonico"></a></h1>
+
+<p>por Daniel Corvalán</p>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://linkedin.com/in/corvalan" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/corvalanlara" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="https://corvalan.dev/pitonico/feeds/es.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="data-types">Tipos de datos I</h1>
+    <p>
+      Publicado el 26 de septiembre del 2019 en <a href="https://corvalan.dev/pitonico/category/basics.html">Basics</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Programar es manipular información. Y para referenciar esta información, hacemos uso de variables. Una variable es una palabra (o un conjunto de palabras) usada para hacer referencia a algún tipo de dato. Tenemos entonces dos nuevas conceptos que debemos comprender: variable y tipo de dato (o <em>data type</em>).</p>
+<p>Primero, abrimos la terminal y escribirmos <code>conda activate intro</code> y luego <code>python</code>. En la entrada anterior usamos <code>python intro.py</code> para ejecutar el código en el archivo intro.py, ahora estamos usando el interpretador interactivo (<em>interactive interpreter</em>, también llamado <em>interactive shell</em>) para ejecutar código. Normalmente se puede usar el modo interactivo para testear código o para pequeños programas que no requieren ser guardados.</p>
+<p>El cursor ahora estará frente a &gt;&gt;&gt;, esperando que ingresemos algo. Escribamos <code>primera_variable = 42</code> y presionaremos Enter. Hemos creado y asignado nuestra primera variable llamada <code>primera_variable</code>.
+<pre class="line-numbers" id="tres">
+<button class="fa fa-play play-button" onclick="runit('tres','cuatro')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""></button><code class="language-python">primera_variable = 42
+print(primera_variable)
+</code></pre>
+<pre id="cuatro"></pre></p>
+<p>Cada vez que escribamos <code>primera_variable</code> Python evaluará la variable, buscará el <strong>último</strong> tipo de dato que le fue asignado y lo reemplazará por la variable misma. Es decir, cada vez que escribamos <code>primera_variable</code>, Python entenderá 42 (al menos hasta que modifiquemos la variable misma). Si escribimos <code>primera_variable</code> en la shell, ésta nos devolverá el número asignado.</p>
+<div class="highlight"><pre><span></span><span class="n">primera_variable</span>
+<span class="mi">42</span>
+</pre></div>
+
+
+<p>Ahora, también es posible reasignar la variable.
+<pre class="line-numbers" id="cinco">
+<button class="fa fa-play play-button" onclick="runit('cinco','seis')" style="color: white; border:none; background: none; position: absolute; top: 0; right: 0; bottom: 0;" aria-label="Ejecutar" hidden=""></button><code class="language-python">primera_variable = 42
+primera_variable = 'Alstroemeria patagonica'
+print(primera_variable)
+</code></pre>
+<pre id="seis"></pre></p>
+<p>Como el último tipo de dato asignado fue la frase "Alstroemeria patagonica", esta es la que Python imprime. Ahora, hasta el momento hemos visto dos tipos de datos: el primero un número entero y después una frase. Al primer tipo de datos, Python los denomina <em>integer</em> (el nombre usado en inglés para remitir a números enteros). Con este tipo de datos podemos guardar información del tipo: cantidad de palabras que un texto tiene o número de personas que le dieron compartieron una publicación en X red social. El segundo tipo de datos es conocido como <em>String</em>, una secuencia de caracteres delimitada por el uso de comillas (las que puedes ser simples '' o dobles ""). Con ellas podemos guardar información como nombres o el texto de una publicación.</p>
+<p>Existen dos tipos de datos básicos que creo preciso mencionar aquí. Si quisiéramos guardar el valor del dolar al día, por ejemplo, usaríamos un <em>float</em>, un número entero con una parte decimal, el cual, siguiendo la notación americana, usa punto en vez de coma: <code>dolar = 712.98</code>. Y si necesitamos saber que algo es verdadero o falso, usamos un tipo de dato <em>boolean</em>, creando un variable como: <code>la_tierra_es_plana = False</code> o <code>las_vacunas_no_causan_autismo = True</code>. Un booleano sólo tiene dos valores: True o False (así, con mayúscula).</p>
+<p>Podemos saber qué tipo de dato estamos manejando si usamos la función type().</p>
+<div class="highlight"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span>
+</pre></div>
+
+
+<p>&lt;class 'float'&gt;</p>
+<div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;我是很忙&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+</pre></div>
+
+
+<p>&lt;class 'str'&gt;</p>
+<div class="highlight"><pre><span></span><span class="n">si</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">si</span><span class="p">)</span>
+</pre></div>
+
+
+<p>&lt;class 'bool'&gt;</p>
+<div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+
+
+<p>&lt;class 'int'&gt;</p>
+<p>Como punto aparte, Python tiene una <a href="" title="https://www.python.org/dev/peps/pep-0008/">guía de estilo</a> que creo conveniente que tengan en cuenta. Una de estas convenciones es el uso de snake_case (i.e. escribir varibles <code>donde_las_palabras_se_separan_por_underscores</code>), en oposición al camelCase, donde el nombre de la variable está <code>unidoPeroConMayusculas</code>. A su vez, existe otra convención entre programadores, donde, al escribir una variable toda en mayúscula <code>TODA_EN_MAYÚSCULA</code>, se asume que el valor que esta tiene no va a cambiar nunca (i.e. es estática).</p>
+<p><em>Strings</em>, <em>integers</em>, <em>floats</em> y <em>booleans</em> son los tipos de datos básicos con los que trabajaremos durante las próximas publicaciones. Hay más, pero a medida que los necesitemos se los presentaré.</p>
+<p>Por último, escribimos <code>exit()</code> en la shell, para cerrar nuestra sesión en la shell. Y luego <code>conda deactivate</code> para salir de nuestros <em>environment</em> de trabajo.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://corvalan.dev/pitonico/tag/python.html">python</a>
+      <a href="https://corvalan.dev/pitonico/tag/programming.html">programming</a>
+      <a href="https://corvalan.dev/pitonico/tag/coding.html">coding</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2019</p>
+<p>Este sitio usa <a href="http://getpelican.com" target="_blank">Pelican</a> - tema <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> por <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Pitónico ",
+  "url" : "https://corvalan.dev/pitonico",
+  "image": "",
+  "description": "Introducción al lenguaje de programación Python."
+}
+</script>
+
+</body>
+</html>
